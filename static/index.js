@@ -114,14 +114,14 @@ var graphConfig = {
 var temperatureTrace = {
   x: [],
   y: [],
-  name: "Temperature",
+  name: "Top Sensor",
   mode: "lines+markers",
   type: "line",
 };
 var humidityTrace = {
   x: [],
   y: [],
-  name: "Humidity",
+  name: "Bottom Sensor",
   mode: "lines+markers",
   type: "line",
 };
@@ -129,7 +129,7 @@ var humidityTrace = {
 var temperatureLayout = {
   autosize: false,
   title: {
-    text: "Temperature",
+    text: "Top Sensor",
   },
   font: {
     size: 14,
@@ -143,7 +143,7 @@ var temperatureLayout = {
 var humidityLayout = {
   autosize: false,
   title: {
-    text: "Humidity",
+    text: "Bottom Sensor",
   },
   font: {
     size: 14,
@@ -161,12 +161,12 @@ var temperatureData = [
   {
     domain: { x: [0, 1], y: [0, 1] },
     value: 0,
-    title: { text: "Temperature" },
+    title: { text: "Top Sensor" },
     type: "indicator",
     mode: "gauge+number+delta",
-    delta: { reference: 30 },
+    delta: { reference: 50 },
     gauge: {
-      axis: { range: [null, 50] },
+      axis: { range: [null, 100] },
       steps: [
         { range: [0, 20], color: "lightgray" },
         { range: [20, 30], color: "gray" },
@@ -184,7 +184,7 @@ var humidityData = [
   {
     domain: { x: [0, 1], y: [0, 1] },
     value: 0,
-    title: { text: "Humidity" },
+    title: { text: "Bottom Sensor" },
     type: "indicator",
     mode: "gauge+number+delta",
     delta: { reference: 50 },

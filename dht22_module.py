@@ -26,11 +26,11 @@ class DHT22Module:
                 temperature_c = self.dht_device.temperature
                 temperature_f = temperature_c * (9 / 5) + 32
                 humidity = self.dht_device.humidity
-                # print(
-                #     "Temp: {:.1f} F / {:.1f} C    Humidity: {}% ".format(
-                #         temperature_f, temperature_c, humidity
-                #     )
-                # )
+                print(
+                    "Temp: {:.1f} F / {:.1f} C    Humidity: {}% ".format(
+                        temperature_f, temperature_c, humidity
+                    )
+                )
                 return temperature_c, humidity
                 # return random.randint(1,100), random.randint(1,100)
 

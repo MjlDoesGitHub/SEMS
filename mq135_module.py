@@ -38,7 +38,7 @@ class MQ135Module:
         while True:
             # Test your module, then define the value range - in this case between 0 and 60000.
             sensorValue = _range(channel_0.value, 0, 60000, 0, 1023)
-            # print("AQI:", sensorValue)
+            print("AQI:", sensorValue)
             APL = ""
             if (sensorValue > 0 & sensorValue <= 50):
                 APL = 0

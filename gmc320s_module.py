@@ -46,6 +46,6 @@ class GMC320SModule:
         while True:
             cpm = getCPM(ser)  
             uSv = cpm * 0.00812
-            #print("CPM:", cpm)
+            print("CPM:", cpm)
             return cpm, uSv
             # return random.randint(300,400), random.randint(300,400)
