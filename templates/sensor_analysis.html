@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SEMS Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.plot.ly/plotly-2.20.0.min.js"
+      charset="utf-8"
+    ></script>
+    <link href="../static/index.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"
+      integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ=="
+      crossorigin="anonymous"
+    ></script>
+</head>
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">S.E.M.S</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="sensors.html" class="nav-link" href="#">Sensors</a>
+              </li>
+              <li class="nav-item">
+                <a href="sensor_analysis.html" class="nav-link active" aria-current="page" href="#">Sensor Analysis</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container-fluid content mt-5">
+        <div class="ms-sm-auto center-content px-5">
+            <div class="row">
+              <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom border-danger"
+              >
+              <h1 class="h1" style="color:#8B0000">
+                Sensor Analysis
+              </h1>
+              </div>
+            </div>
+            <div class="row">
+                <h2 class="h2 custom-red-text" style="color:#8B0000">
+                    MQ135 Sensor: Air Quality 
+                </h2>
+                <p>
+                    High sensitivity to NH3 gas, H2S, benzene series 
+                </p>
+                <p>
+                    Semiconductor type: Has a steel exoskeleton under where the sensing element is housed . The sensing element is subjected to current. The gases 
+                    that come close to the sensing element are ionized and absorbed by the sensing element which changes the sensing element’s resistance and alters 
+                    the value of the current going out of it
+                    
+                </p>
+                <p>
+                    Uses SnO2, a gas sensitive material that has a higher resistance in clean air. Increase in number of harmful gasses decreases the resistance of the gas MQ135.
+                </p>
+                <p>
+                    Analog output signal is proportional to the gas vapor concentration with is measured by the MQ135 sensor module.
+                </p>
+                <p>
+                    Optimal Working Conditions: 
+                    <li>
+                        Temp: -10 to 45C
+                    </li> 
+                    <li>
+                        Humidity < 95% 11
+                    </li> 
+                    <li>
+                        Operates a 5V with a 150mA consumption 
+                        <li> 
+                            20 sec preheating is required to obtain accurate output
+                        </li>
+                    </li> 
+
+                </p>
+                <h2 class="h2 custom-red-text" style="color:#8B0000">
+                    GMC Sensor: Radiation 
+                </h2>
+                <p>
+                    For continuous monitoring and synchronization, you can connect the device to a PC using the supplied cable, facilitating data transfer and analysis.
+                </p>
+                <p>
+                    Electrons absorb energy from radiation can get pushed out of their orbit. (Ionization) and create an ion pair, free e- and + charged atom
+                </p>
+                <p>
+                    Works by a sealed tube of gas absorbing the radiation. When radiation hits the particles, and they get ionized, the wire in the tube attracts and 
+                    counts the electrons CPM (COUNTS PER MIN)
+
+                </p>
+                <p>
+                    Provides the exposure rate: (mR/h), the amount of radiation in the vicinity —> can be used to determine the dose rate, which is how much radiation 
+                    is assumed to be absorbed by the person. 
+
+                </p>
+                <p>
+                    Average background radiation is around 0.05 - 0.2 uSv and it comes from the earth’s atmosphere, cosmic rays, and nearby radioactive materials. 
+                    Considered safe for both patients and healthcare providers. Annual occupational dose limit 50 uSv for whole-body exposure.
+                    The conversion from uSv to CPM is uSv 0.0082 = 1 CPM.
+                </p>
+                <p>
+                    X-Ray and Gamma: Highest Energy EM radiation, penetrates human tissue, is called penetrating radiation. Both are hazardous to humans, a dense
+                    material is needed to shield. Gamma radiation is easily detected. 
+                </p>
+                <p>
+                    Beta: light short-range particles that can eject an electron. Can travel in the air, can penetrate the germinal layer of the skin, and cause skin injury.
+                    Some beta emitters are hard to detect due to their low energy. What GM can’t do: tell you the OG source of radiation, the amount of E it has or what type of radiation.
+                    Can be used for diagnostic and therapeutic purposes; most commonly used in iagnostic imaging and radiation therapy (gamma), computed tomography, radiography 
+                    (X-rays), brachytherapy (beta)
+                </p>
+                <p>
+                    What does it mean to have high radiation? Increased use of imaging procedures(cumulative radiation), technical errors or malfunctions, inadequate maintenance of 
+                    equipment, or nonadherence to radiation safety guidelines.
+                    Medical providers who work with radiation are allowed to experience twice as much radiation as the regular public. 
+                </p>
+                <p>
+                    High radiation in the medical field can cause: Acute radiation syndrome (nausea, vomiting, hair loss, bone marrow damage, skin burns, etc), increased risk of cancer 
+                    (uncontrolled growth of cancer cells due to mutations in the cells), genetic and hereditary effects and disorders, radiation-induced tissue damage, increased risk of radiation-induced illness 
+                    (radiation fibrosis, cataracts, thyroid disorders)
+
+                </p>
+                <h2 class="h2 custom-red-text" style="color:#8B0000">
+                    DHT22 Sensor: Tempature and Humdity 
+                </h2>
+                <p>
+                    Temperature: Heating, Ventilation, AC (HVAC), equipment malfunctions, other factors that can affect patient safety
+                </p>
+                <p>                
+                    Optimal: 68-75 F; 20-24 C; Comfortable for both surgical team and patient
+                </p>
+                <p>                
+                    Temperature too High: Patient Discomfort; Infection Risk: High temperatures can promote bacterial growth and increase the risk of infection in the surgical site; Surgical Team Discomfort
+                </p>
+                <p>                
+                    Temperature too Low:
+                    Hypothermia Risk: slowed wound healing, cardiac problems, increased surgical complications
+                </p>
+                <p>
+                    Humidity:
+                </p>
+                <p>
+                    Optimal: 30-60%
+                </p>
+                <p>
+                    High Humidity: Infection Risk - can promote growth of microorganisms (bacteria and fungi), which can increase the risk of surgical site infections; Equipment Issues - can lead to equipment malfunctions, especially sensitive electronic and optical equipment
+
+                </p>
+                <p>
+                    Low Humidity: Patient Discomfort - can lead to dry, irritated mucous membranes and discomfort for both patient and surgical team; Wound Desiccation - can cause excessive drying of the surgical site, potentially hindering wound healing and increasing the risk of complications; Static Electricity - lead to an increase in static electricity, which can sensitive electronic equipment and create sparks that might be hazardous in an environment with oxygen-rich gasses
+                </p>
+                <h2 class="h2 custom-red-text" style="color:#8B0000">
+                    LTR390 Sensor: UV Light 
+                </h2>
+                <p>
+                    UV (peak spectral response): 300 and 350 nm
+                </p>
+                <p>
+                    Monitoring UV exposure in Phototherapy: Phototherapy is sued for several medical conditions (neonatal jaundice, psoriasis, vitiligo, etc). This sensor can be used 
+                    to monitor and control the dose of UV-A radiation that patients receive during treatment
+                </p>
+                <p>
+                    Sterilization: ~254 nm UV light is needed from (100-280 nm) to kill microorganisms. Many labs utilize UV light to sterilize their medical equipment in labs.
+                </p>
+                <p>
+                    UV Exposure in Labs: Labs that need UV light sources, that are found in equipment, can risk overexposure. UV sensor will measure the amount of UVA and UVB and 
+                    the resulting data will alert if there is too much of either one
+                </p>
+                <p>
+                    UV Index Readings: 
+                    <li>
+                        UVA (320 - 400 nm): Must be 1 milliwatt for cm^2 for over 8 hours
+                    </li>
+                    <li>
+                        UVB (280 - 320 nm): 0.1 milliwatt/cm^2
+                    </li>
+                </p>
+                <p>
+                    The importance for lab personnel is that being exposed to UV sources intermittently is harmful, especially with UVB. Sometimes protective clothing is not enough. 
+                    Its harmful to skin and can cause long-term skin damage and some skin cancers
+                </p>
+                <p>
+                    In-person testing: UV Lamp
+                </p>
+                <p>
+                    Detects: ALS/UV/Visible
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+          <span class="text-white">&copy;2023 Alpha Theta Pledge Class</span>
+        </div>
+      </footer>
+  </body>
+  
